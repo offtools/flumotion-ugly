@@ -22,5 +22,5 @@ from flumotion.component.muxers import base
 __version__ = "$Rev$"
 
 
-class GstFlvWizardPlugin(base.MuxerPlugin):
-    requirements = ['flvmux']
+class GstMpegtsWizardPlugin(base.MuxerPlugin):
+    requirements = ['mpegts']
