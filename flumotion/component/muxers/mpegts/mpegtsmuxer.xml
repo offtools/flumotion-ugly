@@ -1,0 +1,43 @@
+<registry>
+  <components>
+
+    <component type="mpegts-muxer" base="flumotion/component/muxers/mpegts"
+               _description="Muxes encoded feeds into an transport stream feed.">
+      <source location="flumotion.component.muxers.mpegts.mpegts"/>
+      <feeder name="default"/>
+      <eater name="default" multiple="yes"/>
+      <entries>
+        <entry type="component" location="mpegts.py"
+               function="GstMpegts"/>
+        <entry type="wizard" location="wizard_gtk.py"
+               function="GstMpegtsWizardPlugin"/>
+      </entries>
+      <wizard _description="Mpegts" type="muxer"
+              feeder="default" eater="default">
+        <accept-format media-type="mp3"/>
+        <accept-format media-type="aac"/>
+        <accept-format media-type="h264"/>
+        <provide-format media-type="mpegts" />
+      </wizard>
+    </component>
+
+  </components>
+
+  <bundles>
+    <bundle project="ugly" name="mpegts-muxer">
+        <dependencies>
+            <dependency name="component" />
+            <dependency name="muxers-base" />
+        </dependencies>
+
+        <directories>
+            <directory name="flumotion/component/muxers/mpegts">
+                <filename location="__init__.py" />
+                <filename location="mpegts.py" />
+                <filename location="wizard_gtk.py" />
+            </directory>
+        </directories>
+    </bundle>
+  </bundles>
+
+</registry>
