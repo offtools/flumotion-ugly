@@ -1,0 +1,42 @@
+<registry>
+  <components>
+
+    <component type="mp4-muxer" base="flumotion/component/muxers/mp4"
+               _description="Muxes encoded feeds into an mp4 feed.">
+      <source location="flumotion.component.muxers.mp4.mp4"/>
+      <feeder name="default"/>
+      <eater name="default" multiple="yes"/>
+      <entries>
+        <entry type="component" location="mp4.py"
+               function="GstMp4"/>
+        <entry type="wizard" location="wizard_gtk.py"
+               function="GstMp4WizardPlugin"/>
+      </entries>
+      <wizard _description="mp4" type="muxer"
+              feeder="default" eater="default">
+        <accept-format media-type="mp3"/>
+        <accept-format media-type="aac"/>
+        <accept-format media-type="h264"/>
+        <provide-format media-type="mp4" />
+      </wizard>
+    </component>
+
+  </components>
+
+  <bundles>
+    <bundle project="ugly" name="mp4-muxer">
+        <dependencies>
+            <dependency name="component" />
+            <dependency name="muxers-base" />
+        </dependencies>
+
+        <directories>
+            <directory name="flumotion/component/muxers/mp4">
+                <filename location="__init__.py" />
+                <filename location="mp4.py" />
+                <filename location="wizard_gtk.py" />
+            </directory>
+        </directories>
+    </bundle>
+  </bundles>
+</registry>
