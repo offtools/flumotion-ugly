@@ -5,6 +5,9 @@
 # Ignore compiled files
 *pyc
 
+# Ignore Backup files
+*~
+
 # Ignore all the Makefiles
 *Makefile
 *Makefile.in
