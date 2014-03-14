@@ -14,7 +14,7 @@
 
 # Headers in this file shall remain intact.
 
-"""Wizard plugin for the ogg, multipart and webm muxers
+"""Wizard plugin for the ogg, multipart, webm and mpegts muxers
 """
 
 from flumotion.component.muxers import base
@@ -23,4 +23,4 @@ __version__ = "$Rev$"
 
 
 class GstFlvWizardPlugin(base.MuxerPlugin):
-    requirements = ['flvmux']
+    requirements = ['mpegtsmux']
