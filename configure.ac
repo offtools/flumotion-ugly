@@ -82,6 +82,7 @@ flumotion/component/muxers/gstflv/Makefile
 flumotion/component/muxers/lamemp3/Makefile
 flumotion/component/muxers/faac/Makefile
 flumotion/component/muxers/mpegts/Makefile
+flumotion/component/muxers/mp4/Makefile
 flumotion/project/Makefile
 flumotion/project/ugly.py
 misc/Makefile
